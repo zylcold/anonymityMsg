@@ -1,0 +1,31 @@
+{
+    "name": "wantu-nodejsSDK",
+    "version": "0.0.1",
+    "description": "wantu sdk for node.js",
+    "main": "index.js",
+    "repository": {
+        "type": "",
+        "url": ""
+    },
+    "keywords": [
+        "wantu",
+        "sdk",
+        "cdn",
+        "cloud",
+        "storage"
+    ],
+    "license": "",
+    "bugs": {
+        "url": ""
+    },
+    "homepage": "",
+    "devDependencies": {
+        "mocha": "~1.16.2",
+        "should": "~4.0.4"
+    },
+    "dependencies": {
+        "crypto-js": "~3.1.5",
+        "urlsafe-base64":"~1.0.0",
+        "form-data": "~1.0.0-rc3"
+    }
+}
