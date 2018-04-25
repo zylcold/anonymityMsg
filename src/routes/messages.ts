@@ -24,4 +24,31 @@ router.post('/message/send', async (req, res) => {
     }
 })
 
+router.get('/message/messages', async (req, res) => {
+    try {
+        const messages = await Message.find({}, '_id message images video audio create_time.minute')
+        res.send({status: 200, messages: messages})
+    }catch(err) {
+        res.send({status: 400, error: err})
+    }
+})
+
+router.get('/message/:messageid', async (req, res) => {
+    const messageid = req.params.messageid
+    if(!messageid) {
+        res.send({status:400, error: "id 为空"})
+    }else {
+        try {
+            const message = await Message.findById(messageid)
+            if(message) {
+                res.send({status:200, message: message})
+            }else {
+                res.send({status:400, error: "id 不存在"})
+            }
+        }catch(err) {
+            res.send({status: 400, error: err})
+        }
+    }
+
+})
 export default router
