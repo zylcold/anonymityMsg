@@ -1,4 +1,4 @@
 export default {
-    // database : 'mongodb://mongodb/nodeDB'
-    database : 'mongodb://localhost/nodeDB'
+    docker_database : 'mongodb://mongodb/nodeDB',
+    local_database : 'mongodb://localhost/nodeDB'
 } 

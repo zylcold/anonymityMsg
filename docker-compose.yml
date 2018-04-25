@@ -16,10 +16,6 @@ services:
     networks:
       - my_network_name
 
-volumes:
-  mongodb_data:
-    driver: local
-
 networks:
     my_network_name:
         driver: bridge
