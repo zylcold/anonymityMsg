@@ -1,0 +1,26 @@
+version: '3'
+services:
+  mongodb:
+    image: bitnami/mongodb:latest
+    ports:
+      - "27017:27017"
+    networks:
+    - my_network_name
+
+  web: 
+    build: .
+    ports:
+      - '9000:8081'
+    command: npm start
+    depends_on:
+      - mongodb
+    networks:
+      - my_network_name
+
+volumes:
+  mongodb_data:
+    driver: local
+
+networks:
+    my_network_name:
+        driver: bridge
