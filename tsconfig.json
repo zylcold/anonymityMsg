@@ -11,9 +11,9 @@
       "./src/**/*"
   ],
   "exclude": [
+      "./lib/**/*",
       "views",
-      "public",
-      "node_modules",
+      "./node_modules/**/*",
       "**/*.spec.ts",
   ]
 }
