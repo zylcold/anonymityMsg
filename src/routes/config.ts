@@ -9,9 +9,9 @@ const fs:any = Bluebird.promisifyAll(fs_p)
 router.get('/config', async (req, res)=>{
     try {
         const contents = await fs.readFileAsync(path.join(__dirname, '../../res/config.json'), 'utf8')
-        res.send({status:200, ...JSON.parse(contents)})
+        res.send({status:200, message: "成功", ...JSON.parse(contents)})
     }catch(err) {
-        res.send({status:400, error: err})
+        res.send({status:400, message: err})
     }
 })
 

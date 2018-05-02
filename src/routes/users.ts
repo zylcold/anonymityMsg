@@ -21,7 +21,7 @@ router.post('/signup', async (req:UserReqest, res)=> {
             let users = await User.find({name: req.body.name})
             if(users.length == 0) {
                 await newUser.save()
-                res.json({status: 200, message: '成功创建新用户'})
+                res.json({status: 200, message: '成功创建新用户', uid: newUser._id})
             }else {
                 res.json({status: 400, message: '用户名已存在'})
             }
