@@ -16,6 +16,9 @@ const MessageSchema = new Schema({
     },
     create_time: {
         type: Object
+    },
+    user_name: {
+        type: String
     }
 })
 interface messageInterface {
@@ -40,4 +43,10 @@ MessageSchema.pre('save', function(next) {
     message.create_time = time
     next()
 })
+
+const virtual = MessageSchema.virtual('post_time')
+virtual.get( function (this: any) {
+    return this.time.day
+})
+
 export default mongoose.model('message', MessageSchema)

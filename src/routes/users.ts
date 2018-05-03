@@ -33,5 +33,19 @@ router.post('/signup', async (req:UserReqest, res)=> {
     }
 })
 
+router.get('/user/:uid', async (req, res) => {
+    const uid = req.params.uid
+    try {
+        const user:any = await User.findOne({_id:uid})
+        if(!user) {
+            res.send({status: 400, message: '该用户不存在'})
+        }else {
+            res.send({status: 200, name: user.name})
+        }
+    }catch(err) {
+        res.send({status: 400, message: err})
+    }
+})
+
 
 export default router

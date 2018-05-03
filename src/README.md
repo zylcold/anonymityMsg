@@ -12,6 +12,12 @@
 
     res:
     message
+    
+# 用户信息
+## (GET) /api/user/:uid
+
+    curl 'localhost:8081/api/user/5adf58d6fa0e1252e135beac'
+
 
 # 配置信息
 ## (GET) /api/config
