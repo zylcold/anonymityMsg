@@ -40,7 +40,7 @@ router.get('/user/:uid', async (req, res) => {
         if(!user) {
             res.send({status: 400, message: '该用户不存在'})
         }else {
-            res.send({status: 200, name: user.name})
+            res.send({status: 200, name: user.name, message: "成功"})
         }
     }catch(err) {
         res.send({status: 400, message: err})
