@@ -43,7 +43,7 @@ router.get('/message/messages', async (req, res) => {
     }
     
     try {
-        const messages = await Message.find({}, {message:1, images:1, video:1, audio:1, post_time:1})
+        const messages = await Message.find({}, {message:1, images:1, video:1, audio:1, post_time:1, user_name:1})
             .sort({'create_time.date': -1}).skip(page*pageNum).limit(pageNum)
         const totalCount = await Message.count({})
         let totalPage = {
